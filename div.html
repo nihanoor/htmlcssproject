@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-image: url("https://templatemo.com/templates/templatemo_536_dream_pulse/img/dream-pulse-header.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .carousel-container {
+            width: 80%;
+            max-width: 1200px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 20px auto;
+        }
+
+        .carousel-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .carousel {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .carousel-item {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .carousel-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: gray;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            margin-left: 300px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .toggle-button {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .about-company {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .about-company div {
+            padding: 20px;
+            width: 45%;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+
+            .toggle-button {
+                display: block;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .about-company {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-company div {
+                width: 100%;
+            }
+            .responsive-columns div {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .responsive-columns div div {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+        }
+        .responsive-columns div {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+
+        .responsive-columns div div img {
+            /* width: 120px; */
+            height: 70px;
+            /* background-color: lightgray; */
+            text-align: center;
+            /* line-height: 100px; */
+            margin-bottom: 10px;
+            /* justify-content: space-evenly; */
+            padding: 20px;
+
+        }
+
+
+
+.contact-box {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+}
+
+.contact-box::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid #ccc;
+    z-index: 4;
+}
+
+.contact-box h2 {
+    color: #007BFF;
+}
+
+.contact-box p {
+    margin: 50px ;
+    color: #333;
+}
+.box {
+    border: 2px solid rgb(251, 251, 251);
+    background-color: transparent;
+    width: 500px;
+    height: 400px;
+    /* Centering the box horizontally */
+    margin-top: 150px;
+    margin-left: 600px;
+}
+
+.contact-form {
+            /* width: 100%; */
+            /* max-width: 400px; */
+            padding: 20px;
+            background-color: #fff;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            /* border-radius: 8px; */
+            margin-top: 50px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            /* background-color: #333; */
+            color: #090909;
+            border: black;
+            /* border-radius: 4px; */
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-form button:hover {
+            /* background-color: #555; */
+        }
+
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 15px;
+                
+            }
+
+            .contact-form button {
+                font-size: 14px;
+            }
+            .contact {
+                flex-direction: column;
+            align-items: center;
+            }
+            .about-company{
+                justify-content: center;
+                align-items: center;
+
+            }
+          
+        }
+
+        .header {
+            background-image: url("https://templatemo.com/templates/templatemo_536_dream_pulse/img/dream-pulse-header.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .box h2 {
+            margin: 0 0 10px 0;
+        }
+
+        .box p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                justify-content: center;
+                align-items: center;
+            }
+            .box {
+                justify-content: center;
+                align-items: center; 
+            }
+          
+          
+        }
+        div > div > img {
+            /* border: 2px solid rgb(184, 178, 178); */
+            
+        }
+    </style>
+</head>
+
+<body>
+    <button class="toggle-button" onclick="toggleNav()">Menu</button>
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    <div class="header">
+        <!-- <div class="box">
+            <h2>Heading</h2>
+            <p>First paragraph content goes here.</p>
+            <p>Second paragraph content goes here.</p>
+        </div> -->
+    </div>
+    <div class="content">
+    
+        <div class="about-company">
+            <div>
+                <img src="./about.png" alt="Image">
+                <h1>About Us</h1>
+                <p>When the first section is scrolled up, the background image will disappear with a parallax effect.
+                    Donec ac tempor tellus, a eleifend ligula. Fusce vitae sem sed purus euismod condimentum.</p><br />
+                <p>Sed at orci non metus tristique suscipit vitae in nibh. Sed rutrum odio ac est hendrerit, at
+                    vestibulum felis condimentum.</p>
+            </div>
+            <div>
+                <img src="./company.png" alt="Image">
+                <h1>Company</h1>
+                <p>When the first section is scrolled up, the background image will disappear with a parallax effect.
+                    Donec ac tempor tellus, a eleifend ligula. Fusce vitae sem sed purus euismod condimentum.</p><br />
+                <p>Sed at orci non metus tristique suscipit vitae in nibh. Sed rutrum odio ac est hendrerit, at
+                    vestibulum felis condimentum.</p>
+            </div>
+        </div>
+        <!-- <div class="carousel-container"> -->
+            <div class="contact-box">
+            <div class="carousel-title">Our Work</div>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="https://templatemo.com/templates/templatemo_536_dream_pulse/img/gallery/03.jpg"
+                        alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://templatemo.com/templates/templatemo_536_dream_pulse/img/gallery/04.jpg"
+                        alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://templatemo.com/templates/templatemo_536_dream_pulse/img/gallery/05.jpg"
+                        alt="Image 3">
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div>
+            <h1 style="color: #007BFF; padding-left: 30px;">Our clients</h1>
+            <p style="padding-left: 30px; padding-right: 70px;">
+                Aenean est augue, iaculis ut arcu a, cursus tempus eros. <br/>
+                Maecenas ut efficitur lectus, vel commodo nibh.<br/>
+                Vivamus consequat massa non euismod facilisis. Morbi assumsan non<br/> libero a vehicula. Donec blandit
+                suscipit magna sit amet elementum.
+            </p>
+            <div class="responsive-columns">
+                <div>
+                    <div style=" border: 2px solid rgb(184, 178, 178); " ><img src="./client-1.png"></div>
+                    <div style=" border: 2px solid rgb(184, 178, 178); "><img src="./client-2.png"></div>
+                    <div style=" border: 2px solid rgb(184, 178, 178); "><img src="./client-3.png"></div>
+                    <div style=" border: 2px solid rgb(184, 178, 178); "><img src="./client-4.png"></div>
+                </div>
+                <div>
+                    <div style=" border: 2px solid rgb(184, 178, 178); "><img src="./client-5.png"></div>
+                    <div style=" border: 2px solid rgb(184, 178, 178); "><img src="./client-6.png"></div>
+                    <div style=" border: 2px solid rgb(184, 178, 178); "><img src="./client-7.png"></div>
+                    <div style=" border: 2px solid rgb(184, 178, 178); "><img src="./client-8.png"></div>
+                </div>
+            </div>
+
+            <div class =" contact" style="display: flex;">
+                  <div class="contact-box">
+                      <h1 style="text-align: center; color: #007BFF;">Talk to Us</h1>
+                      <p>Sed aliquet, nibh ac hendrerit faucibus, tellus metus viverra tellus, vel volutpat purus orci ac ex.</p>
+                      <p>120-240 Orci varius natoque penatibus, parturient montes, 10660 nasvetur ridiculus mus</p>
+                  </div>
+                  <div class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Message..." rows="4" required></textarea>
+                    <button type="submit">SEND</button>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <div>
+
+    </div>
+
+    <script>
+        function toggleNav() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.display === "block") {
+                sidebar.style.display = "none";
+            } else {
+                sidebar.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
